@@ -1,29 +1,37 @@
-import { AppContainer } from './App.styled';
 import { Header } from 'components/Header';
 import { Section } from 'components/Section';
 import { ContactForm } from 'components/ContactForm';
 import { Filter } from 'components/Filter';
 import { ContactsList } from 'components/ContactsList';
-import { GlobalStyles } from 'components/GlobalStyles';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
-import { getError, getIsLoading } from 'redux/selectors';
 import Loader from 'components/Loader/Loader';
+import { GlobalStyles } from 'components/GlobalStyles';
 
-export function App() {
-  const dispatch = useDispatch();
+import { ToastContainer } from 'react-toastify';
+
+import { Helmet } from 'react-helmet';
+
+// import { useEffect } from 'react';
+import {
+  // useDispatch,
+  useSelector,
+} from 'react-redux';
+
+// import { fetchContacts } from 'redux/contacts/operations';
+import { getError, getIsLoading } from 'redux/contacts/selectors';
+
+export default function Contacts() {
+  // const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
   return (
-    <AppContainer>
+    <div>
+      <Helmet>
+        <title>Your contacts</title>
+      </Helmet>
       <Header headerTitle="Phonebook" />
       <Section>
         <ContactForm />
@@ -36,8 +44,6 @@ export function App() {
 
       <GlobalStyles />
       <ToastContainer />
-    </AppContainer>
+    </div>
   );
 }
-
-export default App;

@@ -8,8 +8,8 @@ import {
   NumberSpan,
 } from './ContactsList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchContacts } from 'redux/operations';
-import { getContacts, getFilterValue } from 'redux/selectors';
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
+import { getContacts, getFilterValue } from 'redux/contacts/selectors';
 import { useEffect } from 'react';
 
 const ContactsList = () => {

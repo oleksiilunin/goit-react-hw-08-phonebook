@@ -4,7 +4,7 @@ import { FiSearch } from 'react-icons/fi';
 import { Label, LabelWrapper, Input } from './Filter.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilterValue } from 'redux/filterSlice';
+import { setFilterValue } from 'redux/contacts/filterSlice';
 
 const Filter = () => {
   const dispatch = useDispatch();

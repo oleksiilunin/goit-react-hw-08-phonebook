@@ -12,7 +12,7 @@ import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { notifyOptions } from 'helpers/toastNotifyOptions';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 
 const schema = yup.object().shape({
   name: yup
