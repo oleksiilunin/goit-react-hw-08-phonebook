@@ -8,7 +8,7 @@ import { GlobalStyles } from 'components/GlobalStyles';
 
 import { ToastContainer } from 'react-toastify';
 
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 // import { useEffect } from 'react';
 import {
@@ -28,22 +28,24 @@ export default function Contacts() {
   //   dispatch(fetchContacts());
   // }, [dispatch]);
   return (
-    <div>
-      <Helmet>
-        <title>Your contacts</title>
-      </Helmet>
-      <Header headerTitle="Phonebook" />
-      <Section>
-        <ContactForm />
-      </Section>
-      <Section title="Contacts">
-        <Filter />
-        {isLoading && !error && <Loader />}
-        <ContactsList />
-      </Section>
+    <HelmetProvider>
+      <div>
+        <Helmet>
+          <title>Your contacts</title>
+        </Helmet>
+        <Header headerTitle="Phonebook" />
+        <Section>
+          <ContactForm />
+        </Section>
+        <Section title="Contacts">
+          <Filter />
+          {isLoading && !error && <Loader />}
+          <ContactsList />
+        </Section>
 
-      <GlobalStyles />
-      <ToastContainer />
-    </div>
+        <GlobalStyles />
+        <ToastContainer />
+      </div>
+    </HelmetProvider>
   );
 }

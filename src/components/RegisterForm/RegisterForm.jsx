@@ -18,7 +18,7 @@ const schema = yup.object().shape({
     .trim()
     .max(20)
     .matches(
-      /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
+      /^[a-zA-Zа-яА-Я0-9]+(([' -][a-zA-Zа-яА-Я0-9 ])?[a-zA-Zа-яА-Я0-9]*)*$/,
       `Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan`
     )
     .required(),
@@ -50,6 +50,7 @@ export default function RegisterForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
+    console.log(values);
     dispatch(
       register({
         name: values.name.trim(),
