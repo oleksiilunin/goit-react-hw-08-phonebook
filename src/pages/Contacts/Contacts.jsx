@@ -29,7 +29,7 @@ export default function Contacts() {
   // }, [dispatch]);
   return (
     <HelmetProvider>
-      <div>
+      <>
         <Helmet>
           <title>Your contacts</title>
         </Helmet>
@@ -45,7 +45,7 @@ export default function Contacts() {
 
         <GlobalStyles />
         <ToastContainer />
-      </div>
+      </>
     </HelmetProvider>
   );
 }

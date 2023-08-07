@@ -1,8 +1,9 @@
 import AuthNav from 'components/AuthNav/AuthNav';
-import Navigation from 'components/Navigation/Navigation';
-import { useAuth } from 'hooks/useAuth';
-import { Header } from './AppBar.styled';
 import UserMenu from 'components/UserMenu/UserMenu';
+import Navigation from 'components/Navigation/Navigation';
+import { Header } from './AppBar.styled';
+
+import { useAuth } from 'hooks/useAuth';
 
 export default function AppBar() {
   const { isLoggedIn } = useAuth();

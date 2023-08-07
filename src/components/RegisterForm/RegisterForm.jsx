@@ -123,8 +123,7 @@ export default function RegisterForm() {
           </FormButton>
         </Form>
       </Formik>
-      {error?.response?.data?.name &&
-        toast.error('This email is already registered')}
+      {error?.response?.data?.name && toast('This email is already registered')}
     </div>
   );
 }

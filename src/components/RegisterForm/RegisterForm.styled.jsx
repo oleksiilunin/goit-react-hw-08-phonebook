@@ -51,7 +51,7 @@ export const FormButton = styled.button`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  width: 160px;
+  /* width: 160px; */
   height: 36px;
   padding: 8px;
   border-radius: 8px;

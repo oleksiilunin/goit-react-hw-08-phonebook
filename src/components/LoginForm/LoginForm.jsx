@@ -7,7 +7,7 @@ import {
   FormButton,
   ErrorMessage,
 } from './LoginForm.styled';
-import { FiMail, FiLock } from 'react-icons/fi';
+import { FiMail, FiLock, FiLogIn } from 'react-icons/fi';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
@@ -87,7 +87,7 @@ export default function LoginForm() {
           <ErrorMessage name="password" component="span" />
         </Label>
         <FormButton type="submit">
-          {/* <FiUserPlus size="20" /> */}
+          <FiLogIn size="20" />
           Login
         </FormButton>
       </Form>
