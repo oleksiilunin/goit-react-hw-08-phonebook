@@ -1,5 +1,15 @@
 import styled from '@emotion/styled';
 
+// export const Container = styled.div`
+//   align-self: center;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   gap: 8px;
+//   padding: 0 8px;
+//   max-width: 480px;
+//   width: 100%;
+// `;
 export const List = styled.ul`
   align-self: center;
   display: flex;
@@ -26,6 +36,8 @@ export const ItemWrapper = styled.p`
   /* max-width: 320px; */
   width: 100%;
   /* justify-content: space-between; */
+
+  color: #666666;
 `;
 
 export const DeleteButton = styled.button`

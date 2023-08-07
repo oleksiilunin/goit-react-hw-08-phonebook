@@ -13,6 +13,7 @@ export const UserMenuText = styled.p`
 
   color: #5b5c6c;
   background-color: #45e2a6;
+  /* background-color: rgb(255, 253, 140); */
 
   font-size: 20px;
   font-weight: 600;
