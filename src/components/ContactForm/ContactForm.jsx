@@ -42,22 +42,23 @@ const initialValues = {
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.items);
-
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (newContact, { resetForm }) => {
     const isContactExists = contacts?.some(contact => {
       return (
-        contact.name.trim() === values.name.trim() ||
-        contact.phone.trim() === values.number.trim()
+        contact.name.trim() === newContact.name.trim() ||
+        contact.number.trim() === newContact.number.trim()
       );
     });
 
     if (isContactExists) {
       toast.error(
-        `The contact with name: ${values.name} or phone number: ${values.number} already exists in your list.`,
+        `The contact with name: ${newContact.name} or phone number: ${newContact.number} already exists in your list.`,
         notifyOptions
       );
     } else {
-      dispatch(addContact({ name: values.name, phone: values.number }));
+      dispatch(
+        addContact({ name: newContact.name, number: newContact.number })
+      );
       resetForm();
     }
   };

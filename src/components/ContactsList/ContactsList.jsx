@@ -38,10 +38,10 @@ const ContactsList = () => {
   return (
     !!filteredContacts.length && (
       <List>
-        {filteredContacts.map(({ id, name, phone }) => (
+        {filteredContacts.map(({ id, name, number }) => (
           <Item key={id}>
             <ItemWrapper>
-              <NameSpan>{name}:</NameSpan> <NumberSpan>{phone}</NumberSpan>
+              <NameSpan>{name}:</NameSpan> <NumberSpan>{number}</NumberSpan>
             </ItemWrapper>
             <DeleteButton
               type="button"

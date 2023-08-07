@@ -1,18 +1,20 @@
 import { logIn, logOut, refreshUser, register } from './operations';
 
-const { createSlice } = require('@reduxjs/toolkit');
+import { createSlice } from '@reduxjs/toolkit';
 
 const handlerAuthFulfilled = (state, action) => {
   const { user, token } = action.payload;
   state.user = user;
   state.token = token;
   state.isLoggedIn = true;
+  state.error = null;
 };
 
 const handleLogOutFulfilled = state => {
   state.user = { name: null, email: null };
   state.token = null;
   state.isLoggedIn = false;
+  state.error = null;
 };
 
 const handleRefreshPending = state => {
@@ -23,10 +25,12 @@ const handleRefreshFulfilled = (state, action) => {
   state.user = action.payload;
   state.isLoggedIn = true;
   state.isRefreshing = false;
+  state.error = null;
 };
 
-const handleRefreshRejected = state => {
+const handleRefreshRejected = (state, action) => {
   state.isRefreshing = false;
+  state.error = action.payload;
 };
 
 const handleError = (state, action) => {

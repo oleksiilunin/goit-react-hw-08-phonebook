@@ -88,7 +88,7 @@ export default function LoginForm() {
         </Label>
         <FormButton type="submit">
           {/* <FiUserPlus size="20" /> */}
-          Log In
+          Login
         </FormButton>
       </Form>
     </Formik>
