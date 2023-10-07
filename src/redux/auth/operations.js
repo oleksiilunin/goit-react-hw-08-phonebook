@@ -84,7 +84,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://goit-node-hw-02-06-rest-api.onrender.com';
 
 const token = {
   set(token) {
